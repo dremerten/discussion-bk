@@ -54,4 +54,9 @@ Rails.application.configure do
 
   # Devise mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Mailcatcher recieves on port :1080
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
 end
