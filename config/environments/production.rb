@@ -88,8 +88,7 @@ Rails.application.configure do
 
 config.action_mailer.perform_deliveries = true
 
-# Setup the mailer config
-
+# Setup the sendgrip mailer config
   config.action_mailer.default_url_options = { :host => 'https://dremerten-discussions.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -102,8 +101,6 @@ config.action_mailer.perform_deliveries = true
     :authentication => :plain,
     :enable_starttls_auto => true
   }
-
-
 
 # for heroku deployment
 #config.action_mailer.default_url_options = { :host => 'https://dremerten-discussions.herokuapp.com/' }
