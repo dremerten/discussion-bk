@@ -44,6 +44,9 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 
+# sendgrid-ruby
+gem 'sendgrid-ruby'
+
 # for heroku
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
