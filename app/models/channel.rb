@@ -1,6 +1,6 @@
 class Channel < ApplicationRecord
   has_many :discussions
-  has_many :users, through: :discussions
+  has_many :users, through: :discussions  # creates a join table (user => discussion || discussion => user)
   resourcify
 
   extend FriendlyId
