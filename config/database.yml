@@ -40,6 +40,13 @@
       username: discussions
       password: <%= ENV['DB_PASSWORD'] %>
 
+    staging:
+      <<: *default
+      adapter: postgresql
+      database: discussions_staging
+      username: discussions
+      password: <%= ENV['DB_PASSWORD'] %>
+
     
     #development:
       #adapter: postgresql
