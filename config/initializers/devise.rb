@@ -11,7 +11,9 @@ Devise.setup do |config|
   # config.secret_key = 'c5f879449406d5fd79f17e77b323bf23039c8481a650d9d967b9b28affb1d327f15576f0da3f8f70dba24be1afe2532c1be2175cf22a06a11ed4f9ef7d154675'
 
   # devise secret key staging
-  config.secret_key = '423a999bec2347130290bc23729982178ff130ac2b5e8b3648c96608a5be9389dfba949041d1fa50197bd2a087497a79264e8a1255fc8267154a135806fa6b80' if Rails.env.staging?
+  config.secret_key = '423a999bec2347130290bc23729982178ff130ac2b5e8b3648c96608a5be9389dfba949041d1fa50197bd2a087497a79264e8a1255fc8267154a135806fa6b80'
+
+  # if Rails.env.staging?
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
