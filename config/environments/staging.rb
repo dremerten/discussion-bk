@@ -86,11 +86,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
- config.action_mailer.perform_deliveries = true
+config.action_mailer.perform_deliveries = true
 
-  # Setup the sendgrip mailer config
-  config.action_mailer.default_url_options = { :host => 'https://dremerten-discussions.herokuapp.com/' }
-  #config.action_mailer.default_url_options = { :host => 'https://dre-discussions-staging.herokuapp.com/' }
+# Setup the sendgrip mailer config
+  #config.action_mailer.default_url_options = { :host => 'https://dremerten-discussions.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'https://dre-discussions-staging.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
