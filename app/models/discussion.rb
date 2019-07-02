@@ -15,9 +15,10 @@ class Discussion < ApplicationRecord
   end
 
   private
+
   def check_for_existence
     self.attributes.each do |attr|
-      retrun false if self[attr].nil?
+      return false if self[attr].nil?
     end
   end
 
