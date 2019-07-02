@@ -12,4 +12,12 @@ class Discussion < ApplicationRecord
   def should_generate_new_friendly_id?
     title_changed?
   end
+
+  private
+  def title_existing
+    errors.add(:title_id, :missing)
+  if title.blank?
+  end
+end
+
 end
