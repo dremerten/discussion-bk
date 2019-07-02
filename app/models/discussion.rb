@@ -2,6 +2,7 @@ class Discussion < ApplicationRecord
   belongs_to :channel
   belongs_to :user
   has_many :replies, dependent: :destroy  # if a discussion is deleted, so are the replies
+  before_validation :check_for_existence
 
   validates :title, :content, :channel, presence: true # checks that all fields are filled in, in order to submit to a discussion
   resourcify
@@ -14,10 +15,10 @@ class Discussion < ApplicationRecord
   end
 
   private
-  def title_existing
-    errors.add(:title_id, :missing)
-  if title.blank?
+  def check_for_existence
+    self.attributes.each do |attr|
+      retrun false if self[attr].nil?
+    end
   end
-end
 
 end
