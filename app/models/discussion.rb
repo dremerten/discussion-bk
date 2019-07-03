@@ -3,8 +3,8 @@ class Discussion < ApplicationRecord
   belongs_to :user
   has_many :replies, dependent: :destroy  # if a discussion is deleted, so are the replies
   #before_validation :check_for_existence
-  validates :title, presence: true
-  validates :content, presence: true
+  validates :title, presence: true, allow_blank: false
+  validates :content, presence: true , allow_blank: false
   validates :channel_id, presence: true, allow_blank: false # checks that all fields are filled in, in order to submit to a discussion
   resourcify
 
