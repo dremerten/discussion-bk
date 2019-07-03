@@ -17,7 +17,7 @@ class DiscussionsController < ApplicationController
 
   # GET /discussions/new
   def new
-    @discussion = current_user.discussions.build
+    @discussion = Discussion.new
   end
 
   # GET /discussions/1/edit
@@ -27,7 +27,12 @@ class DiscussionsController < ApplicationController
   # POST /discussions
   # POST /discussions.json
   def create
-    @discussion = current_user.discussions.build(discussion_params)
+    # @discussion = current_user.discussions.build(discussion_params)
+    @discussion = current_user.discussions.create(
+      discussion_params.merge({
+        user_id: current_user.id
+      })
+    )
 
     respond_to do |format|
       if @discussion.save
