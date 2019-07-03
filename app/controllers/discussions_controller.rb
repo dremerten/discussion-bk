@@ -33,14 +33,16 @@ class DiscussionsController < ApplicationController
       if @discussion.save
         format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
         format.json { render :show, status: :created, location: @discussion }
-      else
-        if @discussion.create(discussion_params)
+      end
+      if @discussion.create(discussion_params)
           flash[:alert] = "You must fill in all fields to create a discussion"
         format.html { render :new }
+      end
+    else
         format.json { render json: @discussion.errors, status: :unprocessable_entity }
       end
-    end
   end
+
 
   # PATCH/PUT /discussions/1
   # PATCH/PUT /discussions/1.json
