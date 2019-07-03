@@ -5,7 +5,7 @@ class Discussion < ApplicationRecord
   #before_validation :check_for_existence
   validates :title, presence: true
   validates :content, presence: true
-  validates :channel_id, presence: true # checks that all fields are filled in, in order to submit to a discussion
+  validates :channel_id, presence: true, allow_blank: false # checks that all fields are filled in, in order to submit to a discussion
   resourcify
 
   extend FriendlyId
