@@ -6,7 +6,7 @@ class Discussion < ApplicationRecord
   validates :title, :content, :channel_id, presence: true
   validates :title, length: { minimum: 1, maximum: 50 }
   validates :content, length: { minimum: 1, maximum: 500 }
-  validate_each :channel, :channel_id, presence: true  # checks that all fields are filled in, in order to submit to a discussion
+  validates_each :channel, :channel_id, presence: true  # checks that all fields are filled in, in order to submit to a discussion
   resourcify
 
   extend FriendlyId
