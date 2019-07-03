@@ -42,6 +42,7 @@ class DiscussionsController < ApplicationController
 
   # PATCH/PUT /discussions/1
   # PATCH/PUT /discussions/1.json
+
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
@@ -76,6 +77,6 @@ class DiscussionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion, :title, :content, :channel_id).permit(:title, :content, :channel_id)
+      params.require(:discussion).permit(:title, :content, :channel_id)
     end
 end
