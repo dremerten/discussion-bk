@@ -17,7 +17,7 @@
     <label class="label">Choose A Channel</label>
     <div class="control has-icons-left">
       <span class="select">
-        <%= debug(c) %>
+        <%= debug(@channels) %>
         <%= f.input_field :channel_id, collection:@channels.map { |c| [c.channel, c.id]}, prompt: "Please Select a Channel" %>
       </span>
       <span class="icon is-small is-left">
