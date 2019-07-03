@@ -3,9 +3,10 @@ class Discussion < ApplicationRecord
   belongs_to :user
   has_many :replies, dependent: :destroy  # if a discussion is deleted, so are the replies
   #before_validation :check_for_existence
-  validates :title, presence: true, length: { minimum: 1, maximum: 50 }
-  validates :content, presence: true, length: { minimum: 1, maximum: 500 }
-  validates :channel_id, presence: true  # checks that all fields are filled in, in order to submit to a discussion
+  validates :title, :content, :channel_id, presence: true
+  validates :title, length: { minimum: 1, maximum: 50 }
+  validates :content, length: { minimum: 1, maximum: 500 }
+  validate_each :channel, :channel_id, presence: true  # checks that all fields are filled in, in order to submit to a discussion
   resourcify
 
   extend FriendlyId
