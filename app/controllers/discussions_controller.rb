@@ -28,6 +28,7 @@ class DiscussionsController < ApplicationController
   # POST /discussions.json
   def create
     @discussion = current_user.discussions.build(discussion_params)
+
     respond_to do |format|
       if @discussion.save
         format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
@@ -39,10 +40,8 @@ class DiscussionsController < ApplicationController
     end
   end
 
-
   # PATCH/PUT /discussions/1
   # PATCH/PUT /discussions/1.json
-
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
