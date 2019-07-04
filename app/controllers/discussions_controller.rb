@@ -27,12 +27,7 @@ class DiscussionsController < ApplicationController
   # POST /discussions
   # POST /discussions.json
   def create
-    # @discussion = current_user.discussions.build(discussion_params)
-    @discussion = current_user.discussions << Discussion.new
-    @discussion.update_columns(
-      discussion_params.merge({ user_id: current_user.id })
-    )
-
+    @discussion = current_user.discussions.build(discussion_params)
     respond_to do |format|
       if @discussion.save
         format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
