@@ -28,10 +28,9 @@ class DiscussionsController < ApplicationController
   # POST /discussions.json
   def create
     # @discussion = current_user.discussions.build(discussion_params)
-    @discussion = current_user.discussions.create(
-      discussion_params.merge({
-        user_id: current_user.id
-      })
+    @discussion = current_user.discussions << Discussion.new
+    @discussion.update_columns(
+      discussion_params.merge({ user_id: current_user.id })
     )
 
     respond_to do |format|
