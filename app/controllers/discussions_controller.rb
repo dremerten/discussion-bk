@@ -17,7 +17,7 @@ class DiscussionsController < ApplicationController
 
   # GET /discussions/new
   def new
-    @discussion = Discussion.new
+    @discussion = current_user.discussions.build
   end
 
   # GET /discussions/1/edit
