@@ -3,7 +3,7 @@ class Discussion < ApplicationRecord
   belongs_to :user
   has_many :replies, dependent: :destroy
 
-  validates :title, :content, :channel_id, presence: true
+  validates :title, :content, :channel, :channel_id, presence: true
   resourcify
 
   extend FriendlyId
