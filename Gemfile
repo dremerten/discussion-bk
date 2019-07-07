@@ -38,10 +38,18 @@ gem 'simple_form', '~> 3.5'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+# used for admin users
 gem 'rolify', '~> 5.2'
 gem 'cancancan', '~> 2.1', '>= 2.1.3'
+
+# makes url id's memorable
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+
+
+# used in helpers/application_helper.rb
+# used for rendering markdown
 gem 'redcarpet', '~> 3.4'
+  # used for generating code snippets within forms
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 # amazon s3 bucketeer
@@ -50,7 +58,7 @@ gem 'aws-sdk'
 # sendgrid-ruby
 gem 'sendgrid-ruby'
 
-# for heroku
+# for heroku, setting environmental variables
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 
