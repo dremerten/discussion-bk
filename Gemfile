@@ -53,7 +53,8 @@ gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 # amazon s3 bucketeer
-gem 'aws-sdk'
+gem 'aws-sdk-s3', require: false
+gem 'mini_magick', '~> 4.8'
 
 # sendgrid-ruby
 gem 'sendgrid-ruby'
