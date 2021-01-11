@@ -48,7 +48,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
 # used in helpers/application_helper.rb
 # used for rendering markdown
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
   # used for generating code snippets within forms
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 
